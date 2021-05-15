@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.App {
+  text-align: center;
+  fontfamily: "Poppins";
+}
+#container-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.meal-plan-desc {
+  margin: 1%;
+  margin-top: 0;
+  padding: 0px;
+}
+.meal-plan-desc-1 {
+  margin: 1%;
+  margin-top: 0;
+  padding: 0px;
+}
+
+.selector {
+  padding: 0px;
+}
