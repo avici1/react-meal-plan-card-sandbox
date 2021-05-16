@@ -22,3 +22,18 @@
 .selector {
   padding: 0px;
 }
+#main-container {
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: center;
+  max-width: "200px";
+}
+@media screen and (max-width: 700px) {
+  #main-container {
+    display: flex;
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+  }
+}
