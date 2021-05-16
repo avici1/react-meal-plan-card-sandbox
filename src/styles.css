@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 .App {
   text-align: center;
-  fontfamily: "Poppins";
 }
 #container-flex {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  background-color: "red";
 }
 .meal-plan-desc {
   margin: 1%;
@@ -36,4 +36,20 @@
     align-items: center;
     max-width: 700px;
   }
+}
+#cta {
+  display: flex;
+  justify-content: center;
+}
+.btn-plan:after {
+  border: none;
+}
+
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: none;
+  color: whitesmoke;
 }
