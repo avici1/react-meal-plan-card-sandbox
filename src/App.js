@@ -8,15 +8,22 @@ import {
   Button,
   ButtonGroup
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { MealNumber } from "./context";
+import { useContext, useEffect } from "react";
 const img = require("./assets/download.jfif");
+
 export default function App() {
+  const [getMealNumber, setMealNumber] = useContext(MealNumber);
+  useEffect(() => {
+    console.log(getMealNumber.target);
+  }, [getMealNumber.target]);
   return (
-    <Container>
+    <Container id="main-container">
       <Row>
         <Col>
           <Card
             style={{
-              width: "30rem",
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
             }}
@@ -51,13 +58,15 @@ export default function App() {
                   fontSize: "12px",
                   paddingLeft: "1%",
                   paddingRight: "20px",
-                  paddingBottom: "2%"
+                  paddingBottom: "2%",
+                  backgroundColor: "blue"
                 }}
               >
                 {" "}
                 <span
                   style={{
-                    marginBottom: "2%"
+                    marginBottom: "2%",
+                    textAlign: "center"
                   }}
                 >
                   Healthy, deButtoncious meals, individually portioned and ready
@@ -69,10 +78,38 @@ export default function App() {
                 <Col className="meal-plan-desc">
                   <Row>
                     <ButtonGroup>
-                      <Button className="btn-plan">2</Button>
-                      <Button className="btn-plan">4</Button>
-                      <Button className="btn-plan">6</Button>
-                      <Button className="btn-plan">8</Button>{" "}
+                      <Button
+                        className="btn-plan"
+                        onClick={(e) => {
+                          setMealNumber({ target: 2 });
+                        }}
+                      >
+                        2
+                      </Button>
+                      <Button
+                        className="btn-plan"
+                        onClick={(e) => {
+                          setMealNumber({ target: 4 });
+                        }}
+                      >
+                        4
+                      </Button>
+                      <Button
+                        className="btn-plan"
+                        onClick={(e) => {
+                          setMealNumber({ target: 6 });
+                        }}
+                      >
+                        6
+                      </Button>
+                      <Button
+                        className="btn-plan"
+                        onClick={(e) => {
+                          setMealNumber({ target: 8 });
+                        }}
+                      >
+                        8
+                      </Button>{" "}
                     </ButtonGroup>
                   </Row>
                   <Row style={{ marginTop: "5%", color: "rgb(121, 121, 121)" }}>
@@ -127,6 +164,13 @@ export default function App() {
                     </span>
                   </div>
                 </Col>
+              </div>
+              <div id="cta">
+                <Button>
+                  <Link className="link" to="/menu">
+                    Select menu
+                  </Link>
+                </Button>
               </div>
             </Card.Body>
           </Card>
